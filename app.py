@@ -5,7 +5,9 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="Time_taken(min)", layout="wide")
 
-    df=pd.read_csv("V.DEF_train.csv")
+import pandas as pd
+
+df = pd.read_csv("V.DEF_train.csv")
 
     df['Time_taken(min)'] = df['Time_taken(min)'].str.extract('(\d+)').astype(float)
     df['Delivery_person_Age'] = pd.to_numeric(df['Delivery_person_Age'], errors='coerce')
